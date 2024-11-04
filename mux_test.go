@@ -3014,7 +3014,7 @@ func TestMethodNotAllowed_diffMethods_diffReqMethod(t *testing.T) {
 	router.Path("/something").Methods(http.MethodGet).Handler(http.HandlerFunc(handler))
 
 	w := NewRecorder()
-	req := newRequest(http.MethodPost, "/thing")
+	req := newRequest(http.MethodDelete, "/thing")
 
 	router.ServeHTTP(w, req)
 
